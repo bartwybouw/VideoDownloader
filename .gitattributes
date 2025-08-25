@@ -1,0 +1,8 @@
+# GitHub language detection
+*.swift linguist-language=Swift
+*.py linguist-detectable=false
+VideoDownloader.xcodeproj/** linguist-vendored
+
+# Mark the main project as Swift
+VideoDownloader/ linguist-language=Swift
+VideoDownloader.xcodeproj/ linguist-language=Swift
