@@ -14,21 +14,26 @@ struct ContentView: View {
     @State private var isPaused: Bool = false
     
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Video Downloader")
-                .font(.largeTitle)
-                .padding(.top)
+        VStack(spacing: 16) {
+            HStack {
+                Text("⬇️")
+                    .font(.title)
+                Text("Video Downloader")
+                    .font(.title2.weight(.semibold))
+                Spacer()
+            }
+            .padding(.top, 8)
             
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text("Video URL:")
-                    .font(.headline)
+                    .font(.subheadline.weight(.medium))
                 TextField("Plak hier de video URL", text: $videoURL)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text("Download locatie:")
-                    .font(.headline)
+                    .font(.subheadline.weight(.medium))
                 HStack {
                     Text(selectedFolderURL?.path ?? "Geen map geselecteerd")
                         .foregroundColor(selectedFolderURL == nil ? .gray : .primary)
@@ -37,7 +42,7 @@ struct ContentView: View {
                         .background(Color.gray.opacity(0.1))
                         .cornerRadius(5)
                     
-                    Button("Kies Map") {
+                    Button("Browse") {
                         selectFolder()
                     }
                     .buttonStyle(.bordered)
@@ -81,47 +86,74 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity)
             }
             
-            // Progress Section
+            // Progress Section  
             if isDownloading {
-                VStack(spacing: 10) {
+                VStack(spacing: 8) {
                     ProgressView(value: progressValue, total: 100)
                         .progressViewStyle(LinearProgressViewStyle())
                         .scaleEffect(1.0, anchor: .center)
                     
                     HStack {
                         Text("\(String(format: "%.1f", progressValue))%")
-                            .font(.caption)
+                            .font(.caption2)
                             .foregroundColor(.secondary)
                         
                         Spacer()
                         
                         if !downloadSpeed.isEmpty {
                             Text(downloadSpeed)
-                                .font(.caption)
+                                .font(.caption2)
                                 .foregroundColor(.secondary)
                         }
                         
                         if !eta.isEmpty {
                             Text("ETA: \(eta)")
-                                .font(.caption)
+                                .font(.caption2)
                                 .foregroundColor(.secondary)
                         }
                     }
                     
                     if !currentStatus.isEmpty {
                         Text(currentStatus)
-                            .font(.caption)
+                            .font(.caption2)
                             .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
+                            .lineLimit(1)
                     }
                 }
                 .padding(.horizontal)
             }
             
             Spacer()
+            
+            // Footer with credits
+            HStack {
+                Text("Powered by")
+                    .font(.caption2)
+                    .foregroundColor(.tertiary)
+                Button("yt-dlp") {
+                    if let url = URL(string: "https://github.com/yt-dlp/yt-dlp") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+                .font(.caption2)
+                .buttonStyle(.plain)
+                .foregroundColor(.blue)
+                
+                Spacer()
+                
+                Button("Contact") {
+                    if let url = URL(string: "mailto:bart.wybouw@bamati.be?subject=Video Downloader App") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+                .font(.caption2)
+                .buttonStyle(.plain)
+                .foregroundColor(.blue)
+            }
+            .padding(.top, 4)
         }
-        .padding(30)
-        .frame(minWidth: 500, minHeight: 400)
+        .padding(24)
+        .frame(minWidth: 480, maxWidth: 520, minHeight: 320, maxHeight: .infinity)
     }
     
     private func selectFolder() {
