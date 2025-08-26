@@ -24,15 +24,9 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 16) {
             HStack {
-                Image(systemName: "arrow.down.circle.fill")
-                    .font(.title)
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [Color(red: 0, green: 0.478, blue: 1), Color(red: 0.353, green: 0.784, blue: 0.980)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                Image("HeaderIcon")
+                    .resizable()
+                    .frame(width: WindowConfig.iconSize, height: WindowConfig.iconSize)
                 Text("Video Downloader")
                     .font(.title2)
             }
