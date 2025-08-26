@@ -1,6 +1,14 @@
 import SwiftUI
 import Foundation
 
+// MARK: - Window Configuration
+struct WindowConfig {
+    static let minWidth: CGFloat = 240
+    static let maxWidth: CGFloat = 280
+    static let minHeight: CGFloat = 320
+    static let iconSize: CGFloat = 24
+}
+
 struct ContentView: View {
     @State private var videoURL: String = ""
     @State private var selectedFolderURL: URL?
@@ -18,7 +26,7 @@ struct ContentView: View {
             HStack {
                 Image("AppIcon")
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: WindowConfig.iconSize, height: WindowConfig.iconSize)
                 Text("Video Downloader")
                     .font(.title2)
             }
@@ -139,7 +147,7 @@ struct ContentView: View {
             .padding(.bottom, 8)
         }
         .padding(24)
-        .frame(minWidth: 240, maxWidth: 280, minHeight: 320)
+        .frame(minWidth: WindowConfig.minWidth, maxWidth: WindowConfig.maxWidth, minHeight: WindowConfig.minHeight)
     }
     
     private func selectFolder() {
