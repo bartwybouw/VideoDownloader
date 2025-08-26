@@ -37,6 +37,23 @@ De app toont:
 3. Installeer yt-dlp: `brew install yt-dlp`
 4. Start de app vanuit Applications!
 
+### 🛡️ macOS Gatekeeper Waarschuwing
+
+Als macOS een waarschuwing toont dat de app "niet vertrouwd" is:
+
+**Snelle oplossing:**
+- Rechtsklik op VideoDownloader.app in Applications
+- Kies "Open" en bevestig nogmaals met "Open"
+
+**Of gebruik het meegeleverde script:**
+```bash
+./sign_app.sh
+```
+
+**Alternatief:**
+- Apple menu → Systeem Voorkeuren → Beveiliging en Privacy
+- Klik "Toch openen" onder Algemeen
+
 ---
 
 ## 🔧 Development Setup
