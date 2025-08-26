@@ -13,13 +13,16 @@ Een native macOS applicatie gebouwd met SwiftUI om video's te downloaden van ver
 
 ## 📱 Screenshots
 
+![VideoDownloader App Screenshot](screenshot.png)
+
 De app toont:
+- ⬇️ Modern icoon en compacte interface
 - URL invoerveld voor video links
-- Folder selector met native macOS dialog
+- Folder selector met native macOS dialog ("Browse" knop)
 - Realtime progress bar met percentage
 - Download snelheid en ETA indicators
 - Pause/Resume/Stop knoppen tijdens download
-- Status berichten voor feedback
+- Footer met yt-dlp attributie en contact link
 
 ## 🔧 Installatie & Setup
 
