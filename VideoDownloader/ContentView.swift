@@ -16,8 +16,9 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 16) {
             HStack {
-                Text("⬇️")
-                    .font(.title)
+                Image("AppIcon")
+                    .resizable()
+                    .frame(width: 24, height: 24)
                 Text("Video Downloader")
                     .font(.title2)
             }
