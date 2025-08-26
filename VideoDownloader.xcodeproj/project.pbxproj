@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		A10000001 /* VideoDownloaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000002 /* VideoDownloaderApp.swift */; };
 		A10000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000004 /* ContentView.swift */; };
+		A10000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10000021 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A10000002 /* VideoDownloaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDownloaderApp.swift; sourceTree = "<group>"; };
 		A10000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A10000005 /* VideoDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			children = (
 				A10000002 /* VideoDownloaderApp.swift */,
 				A10000004 /* ContentView.swift */,
+				A10000021 /* Assets.xcassets */,
 			);
 			path = VideoDownloader;
 			sourceTree = "<group>";
@@ -104,6 +107,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10000020 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

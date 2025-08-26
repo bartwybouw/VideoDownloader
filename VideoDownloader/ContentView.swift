@@ -19,21 +19,20 @@ struct ContentView: View {
                 Text("⬇️")
                     .font(.title)
                 Text("Video Downloader")
-                    .font(.title2.weight(.semibold))
-                Spacer()
+                    .font(.title2)
             }
-            .padding(.top, 8)
+            .padding(.top, 16)
             
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("Video URL:")
-                    .font(.subheadline.weight(.medium))
+                    .font(.headline)
                 TextField("Plak hier de video URL", text: $videoURL)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("Download locatie:")
-                    .font(.subheadline.weight(.medium))
+                    .font(.headline)
                 HStack {
                     Text(selectedFolderURL?.path ?? "Geen map geselecteerd")
                         .foregroundColor(selectedFolderURL == nil ? .gray : .primary)
@@ -86,9 +85,9 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity)
             }
             
-            // Progress Section  
+            // Progress Section
             if isDownloading {
-                VStack(spacing: 8) {
+                VStack(spacing: 10) {
                     ProgressView(value: progressValue, total: 100)
                         .progressViewStyle(LinearProgressViewStyle())
                         .scaleEffect(1.0, anchor: .center)
@@ -118,42 +117,28 @@ struct ContentView: View {
                             .font(.caption2)
                             .foregroundColor(.secondary)
                             .lineLimit(1)
+                            .truncationMode(.tail)
                     }
                 }
                 .padding(.horizontal)
             }
             
-            Spacer()
+            Spacer(minLength: 8)
             
             // Footer with credits
-            HStack {
-                Text("Powered by")
+            VStack(spacing: 2) {
+                Link("Powered by yt-dlp", destination: URL(string: "https://github.com/yt-dlp/yt-dlp")!)
                     .font(.caption2)
-                    .foregroundColor(.tertiary)
-                Button("yt-dlp") {
-                    if let url = URL(string: "https://github.com/yt-dlp/yt-dlp") {
-                        NSWorkspace.shared.open(url)
-                    }
-                }
-                .font(.caption2)
-                .buttonStyle(.plain)
-                .foregroundColor(.blue)
+                    .foregroundColor(.blue)
                 
-                Spacer()
-                
-                Button("Contact") {
-                    if let url = URL(string: "mailto:bart.wybouw@bamati.be?subject=Video Downloader App") {
-                        NSWorkspace.shared.open(url)
-                    }
-                }
-                .font(.caption2)
-                .buttonStyle(.plain)
-                .foregroundColor(.blue)
+                Link("Contact: bart.wybouw@bamati.be", destination: URL(string: "mailto:bart.wybouw@bamati.be")!)
+                    .font(.caption2)
+                    .foregroundColor(.blue)
             }
-            .padding(.top, 4)
+            .padding(.bottom, 8)
         }
         .padding(24)
-        .frame(minWidth: 480, maxWidth: 520, minHeight: 320, maxHeight: .infinity)
+        .frame(minWidth: 240, maxWidth: 280, minHeight: 320)
     }
     
     private func selectFolder() {
