@@ -29,7 +29,8 @@ De app toont:
 ### 🚀 Gebruikersinstallatie (Aanbevolen)
 
 **Download de nieuwste versie:**
-- [VideoDownloader_1.0.dmg](VideoDownloader_1.0.dmg) - Klaar voor gebruik!
+- [VideoDownloader_1.0_Signed.dmg](VideoDownloader_1.0_Signed.dmg) - **Professioneel gesigneerd** (geen Gatekeeper waarschuwingen!)
+- [VideoDownloader_1.0.dmg](VideoDownloader_1.0.dmg) - Basis versie (vereist handmatige goedkeuring)
 
 **Installatie stappen:**
 1. Download en open de DMG
@@ -53,6 +54,29 @@ Als macOS een waarschuwing toont dat de app "niet vertrouwd" is:
 **Alternatief:**
 - Apple menu → Systeem Voorkeuren → Beveiliging en Privacy
 - Klik "Toch openen" onder Algemeen
+
+---
+
+## 🍎 Apple Developer Code Signing
+
+### Voor distributie zonder Gatekeeper waarschuwingen:
+
+1. **Setup code signing:**
+   ```bash
+   ./setup_codesigning.sh
+   ```
+
+2. **Build signed version:**
+   - Open project in Xcode
+   - Product → Archive  
+   - Export as Developer ID signed app
+
+3. **Create professional installer:**
+   ```bash
+   ./create_signed_installer.sh
+   ```
+
+**Vereist:** Apple Developer Account met Developer ID Application certificate
 
 ---
 
