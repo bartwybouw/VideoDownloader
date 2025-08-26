@@ -1,4 +1,4 @@
-# Video Downloader App
+# <img src="app-icon.png" alt="VideoDownloader" width="32" height="32"> Video Downloader App
 
 Een native macOS applicatie gebouwd met SwiftUI om video's te downloaden van verschillende platforms met behulp van yt-dlp.
 
@@ -13,8 +13,10 @@ Een native macOS applicatie gebouwd met SwiftUI om video's te downloaden van ver
 
 ## 📱 Screenshots
 
+*Screenshot wordt toegevoegd...*
+
 De app toont:
-- ⬇️ Modern icoon en compacte interface
+- <img src="app-icon.png" alt="App Icon" width="16" height="16"> Modern icoon en compacte interface
 - URL invoerveld voor video links
 - Folder selector met native macOS dialog ("Browse" knop)
 - Realtime progress bar met percentage
@@ -22,7 +24,22 @@ De app toont:
 - Pause/Resume/Stop knoppen tijdens download
 - Footer met yt-dlp attributie en contact link
 
-## 🔧 Installatie & Setup
+## 📦 Download & Installatie
+
+### 🚀 Gebruikersinstallatie (Aanbevolen)
+
+**Download de nieuwste versie:**
+- [VideoDownloader_1.0.dmg](VideoDownloader_1.0.dmg) - Klaar voor gebruik!
+
+**Installatie stappen:**
+1. Download en open de DMG
+2. Sleep VideoDownloader.app naar Applications
+3. Installeer yt-dlp: `brew install yt-dlp`
+4. Start de app vanuit Applications!
+
+---
+
+## 🔧 Development Setup
 
 ### Vereisten
 
