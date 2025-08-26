@@ -13,8 +13,6 @@ Een native macOS applicatie gebouwd met SwiftUI om video's te downloaden van ver
 
 ## 📱 Screenshots
 
-![VideoDownloader App Screenshot](screenshot.png)
-
 De app toont:
 - ⬇️ Modern icoon en compacte interface
 - URL invoerveld voor video links
