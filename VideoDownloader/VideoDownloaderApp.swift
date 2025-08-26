@@ -14,7 +14,6 @@ struct VideoDownloaderApp: App {
         WindowGroup {
             ContentView()
         }
-        .windowResizability(.contentSize)
         .commands {
             CommandGroup(replacing: .newItem) { }
         }
