@@ -13,7 +13,7 @@ Een native macOS applicatie gebouwd met SwiftUI om video's te downloaden van ver
 
 ## 📱 Screenshots
 
-*Screenshot wordt toegevoegd...*
+![VideoDownloader App Screenshot](screenshot.png)
 
 De app toont:
 - <img src="app-icon.png" alt="App Icon" width="16" height="16"> Modern icoon en compacte interface
